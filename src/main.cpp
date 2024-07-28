@@ -116,5 +116,14 @@ void loop()
     lv_obj_t *obj = lv_event_get_target_obj(&g_eez_event);
     Serial.printf("Received event from obj: %u\n", obj);
     g_eez_event_is_available = false;
+
+    if (obj == objects.main00_btn_next)
+    {
+      lv_scr_load(objects.screen00);
+    }
+    else if (obj == objects.screen00_btn_back)
+    {
+      lv_scr_load(objects.main);
+    }
   }
 }
