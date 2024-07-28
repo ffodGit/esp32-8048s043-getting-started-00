@@ -11,6 +11,8 @@
 #define PWM_LED_PIN 12
 #define PWM_CHANNEL 0
 
+#define ANALOG_INPUT_PIN 13
+
 #define TFT_HOR_RES SCREEN_WIDTH
 #define TFT_VER_RES SCREEN_HEIGHT
 
@@ -129,7 +131,7 @@ void loop()
   ui_tick();
 
   static boolean setBuzzerFlag = false;
-  
+
   if (g_eez_event_is_available == true)
   {
     lv_obj_t *obj = lv_event_get_target_obj(&g_eez_event);
@@ -169,9 +171,19 @@ void loop()
       ledcWrite(PWM_CHANNEL, val);
 
       Serial.printf("arc val: %3d%%\n", (uint16_t)val);
-      char labelPwmVal[5] = { 0 };
+      char labelPwmVal[5] = {0};
       sprintf(labelPwmVal, "%3d%%", (uint16_t)val);
       lv_label_set_text(objects.screen01_label_pwm, labelPwmVal);
+    }
+    else if (obj == objects.screen01_btn_next)
+    {
+      lv_scr_load(objects.screen02);
+      setBuzzerFlag = true;
+    }
+    else if (obj == objects.screen02_btn_back)
+    {
+      lv_scr_load(objects.screen01);
+      setBuzzerFlag = true;
     }
   }
 
@@ -193,4 +205,31 @@ void loop()
     digitalWrite(BUZZER_OUTPUT_PIN, LOW);
   }
   // ========== Buzzer beeper END   ==========
+
+  // ========== ADC input START ==========
+  if (lv_screen_active() == objects.screen02) // Run this block only when the current screen is Screen02.
+  {
+    static int intPotValPrev = analogRead(ANALOG_INPUT_PIN); // Get an initial baseline value.
+
+    int potValCur = analogRead(ANALOG_INPUT_PIN); // Get the current raw value.
+    if (abs(potValCur - intPotValPrev) > 5)       // Update the objects only when a delta of 5 units is detected.
+    {
+      int32_t mappedVal = map(potValCur, 0, 4095, 0, 100); // Get the scaled or mapped value.
+      Serial.printf("potValCur: %ld\n", potValCur);
+      Serial.printf("mappedVal: %ld\n\n", mappedVal);
+
+      lv_bar_set_value(objects.screen02_bar_horizontal, potValCur, LV_ANIM_OFF);
+      lv_bar_set_value(objects.screen02_bar_vertical, mappedVal, LV_ANIM_OFF);
+
+      char labelText[6] = {};
+      sprintf(labelText, "%04d", potValCur);
+      lv_label_set_text(objects.screen02_label_horizontal, labelText);
+
+      sprintf(labelText, "%3d%%", mappedVal);
+      lv_label_set_text(objects.screen02_label_vertical, labelText);
+
+      intPotValPrev = potValCur;
+    }
+  }
+  // ========== ADC input END   ==========
 }
