@@ -6,6 +6,7 @@
 #include "ui/ui.h"
 
 #define LED_OUTPUT_PIN 11
+#define BUZZER_OUTPUT_PIN 17
 
 #define TFT_HOR_RES SCREEN_WIDTH
 #define TFT_VER_RES SCREEN_HEIGHT
@@ -109,12 +110,17 @@ void setup()
 
   pinMode(LED_OUTPUT_PIN, OUTPUT);
   digitalWrite(LED_OUTPUT_PIN, LOW);
+
+  pinMode(BUZZER_OUTPUT_PIN, OUTPUT);
+  digitalWrite(BUZZER_OUTPUT_PIN, LOW);
 }
 
 void loop()
 {
   lv_task_handler(); /* Let LVGL do its work. */
   ui_tick();
+
+  static boolean setBuzzerFlag = false;
 
   if (g_eez_event_is_available == true)
   {
@@ -125,16 +131,38 @@ void loop()
     if (obj == objects.main00_btn_next)
     {
       lv_scr_load(objects.screen00);
+      setBuzzerFlag = true;
     }
     else if (obj == objects.screen00_btn_back)
     {
       lv_scr_load(objects.main);
+      setBuzzerFlag = true;
     }
     else if (obj == objects.screen00_btn_led)
     {
       static boolean ledStatus = LOW;
       ledStatus = !ledStatus;
       digitalWrite(LED_OUTPUT_PIN, ledStatus);
+      setBuzzerFlag = true;
     }
   }
+
+  // ========== Buzzer beeper START ==========
+  static uint32_t buzzerTimePrev = 0L;
+  static boolean buzzerIsBusy = false;
+
+  if (setBuzzerFlag && !buzzerIsBusy)
+  {
+    buzzerTimePrev = millis();
+    setBuzzerFlag = false;
+    buzzerIsBusy = true;
+    digitalWrite(BUZZER_OUTPUT_PIN, HIGH);
+  }
+
+  if (buzzerIsBusy && millis() - buzzerTimePrev > 75) // Beep duration: 75 ms only.
+  {
+    buzzerIsBusy = false;
+    digitalWrite(BUZZER_OUTPUT_PIN, LOW);
+  }
+  // ========== Buzzer beeper END   ==========
 }
