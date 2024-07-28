@@ -253,6 +253,15 @@ void create_screen_screen01() {
             lv_arc_set_bg_end_angle(obj, 40);
             lv_obj_add_event_cb(obj, event_handler_cb_screen01_screen01_arc_pwm, LV_EVENT_ALL, 0);
         }
+        {
+            // Screen01LabelPwm
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            objects.screen01_label_pwm = obj;
+            lv_obj_set_pos(obj, 362, 317);
+            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+            lv_label_set_text(obj, "100%");
+            lv_obj_set_style_text_font(obj, &lv_font_montserrat_30, LV_PART_MAIN | LV_STATE_DEFAULT);
+        }
     }
 }
 

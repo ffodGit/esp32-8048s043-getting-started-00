@@ -18,6 +18,7 @@ typedef struct _objects_t {
     lv_obj_t *screen01_arc_pwm;
     lv_obj_t *screen01_btn_back;
     lv_obj_t *screen01_btn_next;
+    lv_obj_t *screen01_label_pwm;
 } objects_t;
 
 extern objects_t objects;

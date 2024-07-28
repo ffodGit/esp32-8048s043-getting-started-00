@@ -129,7 +129,7 @@ void loop()
   ui_tick();
 
   static boolean setBuzzerFlag = false;
-
+  
   if (g_eez_event_is_available == true)
   {
     lv_obj_t *obj = lv_event_get_target_obj(&g_eez_event);
@@ -169,6 +169,9 @@ void loop()
       ledcWrite(PWM_CHANNEL, val);
 
       Serial.printf("arc val: %3d%%\n", (uint16_t)val);
+      char labelPwmVal[5] = { 0 };
+      sprintf(labelPwmVal, "%3d%%", (uint16_t)val);
+      lv_label_set_text(objects.screen01_label_pwm, labelPwmVal);
     }
   }
 
