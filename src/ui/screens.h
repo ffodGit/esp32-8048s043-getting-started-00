@@ -12,6 +12,7 @@ typedef struct _objects_t {
     lv_obj_t *screen00;
     lv_obj_t *main00_btn_next;
     lv_obj_t *screen00_btn_back;
+    lv_obj_t *screen00_btn_led;
     lv_obj_t *screen00_btn_next;
 } objects_t;
 

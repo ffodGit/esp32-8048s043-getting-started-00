@@ -5,6 +5,8 @@
 
 #include "ui/ui.h"
 
+#define LED_OUTPUT_PIN 11
+
 #define TFT_HOR_RES SCREEN_WIDTH
 #define TFT_VER_RES SCREEN_HEIGHT
 
@@ -104,6 +106,9 @@ void setup()
 #endif
 
   ui_init();
+
+  pinMode(LED_OUTPUT_PIN, OUTPUT);
+  digitalWrite(LED_OUTPUT_PIN, LOW);
 }
 
 void loop()
@@ -124,6 +129,12 @@ void loop()
     else if (obj == objects.screen00_btn_back)
     {
       lv_scr_load(objects.main);
+    }
+    else if (obj == objects.screen00_btn_led)
+    {
+      static boolean ledStatus = LOW;
+      ledStatus = !ledStatus;
+      digitalWrite(LED_OUTPUT_PIN, ledStatus);
     }
   }
 }

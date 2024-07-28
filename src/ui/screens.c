@@ -30,6 +30,13 @@ static void event_handler_cb_screen00_screen00_btn_next(lv_event_t *e) {
     }
 }
 
+static void event_handler_cb_screen00_screen00_btn_led(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    if (event == LV_EVENT_RELEASED) {
+        action_set_global_eez_event(e);
+    }
+}
+
 void create_screen_main() {
     lv_obj_t *obj = lv_obj_create(0);
     objects.main = obj;
@@ -133,6 +140,26 @@ void create_screen_screen00() {
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             lv_label_set_text(obj, "Screen00");
             lv_obj_set_style_text_font(obj, &lv_font_montserrat_30, LV_PART_MAIN | LV_STATE_DEFAULT);
+        }
+        {
+            // Screen00BtnLed
+            lv_obj_t *obj = lv_btn_create(parent_obj);
+            objects.screen00_btn_led = obj;
+            lv_obj_set_pos(obj, 307, 206);
+            lv_obj_set_size(obj, 209, 70);
+            lv_obj_add_event_cb(obj, event_handler_cb_screen00_screen00_btn_led, LV_EVENT_ALL, 0);
+            lv_obj_add_flag(obj, LV_OBJ_FLAG_SCROLL_ON_FOCUS);
+            lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 38, 8);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_label_set_text(obj, "On/Off");
+                    lv_obj_set_style_text_font(obj, &lv_font_montserrat_30, LV_PART_MAIN | LV_STATE_DEFAULT);
+                }
+            }
         }
     }
 }
