@@ -8,6 +8,9 @@
 #define LED_OUTPUT_PIN 11
 #define BUZZER_OUTPUT_PIN 17
 
+#define PWM_LED_PIN 12
+#define PWM_CHANNEL 0
+
 #define TFT_HOR_RES SCREEN_WIDTH
 #define TFT_VER_RES SCREEN_HEIGHT
 
@@ -113,6 +116,11 @@ void setup()
 
   pinMode(BUZZER_OUTPUT_PIN, OUTPUT);
   digitalWrite(BUZZER_OUTPUT_PIN, LOW);
+
+  pinMode(PWM_LED_PIN, OUTPUT);
+  ledcAttachPin(PWM_LED_PIN, PWM_CHANNEL);
+  ledcSetup(PWM_CHANNEL, 4000, 8); // 4 kHz PWM, 8-bit resolution
+  ledcWrite(PWM_CHANNEL, 0);
 }
 
 void loop()
@@ -144,6 +152,23 @@ void loop()
       ledStatus = !ledStatus;
       digitalWrite(LED_OUTPUT_PIN, ledStatus);
       setBuzzerFlag = true;
+    }
+    else if (obj == objects.screen00_btn_next)
+    {
+      lv_scr_load(objects.screen01);
+      setBuzzerFlag = true;
+    }
+    else if (obj == objects.screen01_btn_back)
+    {
+      lv_scr_load(objects.screen00);
+      setBuzzerFlag = true;
+    }
+    else if (obj == objects.screen01_arc_pwm)
+    {
+      int32_t val = lv_arc_get_value(objects.screen01_arc_pwm);
+      ledcWrite(PWM_CHANNEL, val);
+
+      Serial.printf("arc val: %3d%%\n", (uint16_t)val);
     }
   }
 
