@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[ESP32-8048S043-GettingStarted.eez-project]:/userPages/0",
+    "selectedUserPageObject": "[ESP32-8048S043-GettingStarted.eez-project]:/userPages/3",
     "selectedActionObject": "[ESP32-8048S043-GettingStarted.eez-project]:/actions/0",
     "subnavigationSelectedItems": {}
   },
@@ -133,8 +133,7 @@
                       "enableClose": false,
                       "icon": "material:code"
                     }
-                  ],
-                  "active": true
+                  ]
                 },
                 {
                   "type": "tabset",
@@ -174,10 +173,42 @@
               "type": "tabset",
               "id": "EDITORS",
               "weight": 60,
-              "selected": 1,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
+                {
+                  "type": "tab",
+                  "id": "#3e849f5d-f2d9-427a-b0f6-90fcfd7ef508",
+                  "name": "Screen02",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[ESP32-8048S043-GettingStarted.eez-project]:/userPages/3",
+                    "permanent": false
+                  },
+                  "icon": "svg:page"
+                },
+                {
+                  "type": "tab",
+                  "id": "#3b4e3bdc-07cb-4958-82a3-da70b40a8c3c",
+                  "name": "Screen01",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[ESP32-8048S043-GettingStarted.eez-project]:/userPages/2",
+                    "permanent": true
+                  },
+                  "icon": "svg:page"
+                },
+                {
+                  "type": "tab",
+                  "id": "#7f463533-5da8-4e96-bc9a-688bb6be310c",
+                  "name": "Screen00",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[ESP32-8048S043-GettingStarted.eez-project]:/userPages/1",
+                    "permanent": true
+                  },
+                  "icon": "svg:page"
+                },
                 {
                   "type": "tab",
                   "id": "#bfd60a46-d55c-449a-af0e-e88138d09bca",
@@ -197,11 +228,12 @@
                   "component": "editor",
                   "config": {
                     "objectPath": "[ESP32-8048S043-GettingStarted.eez-project]:/userPages/0",
-                    "permanent": false
+                    "permanent": true
                   },
                   "icon": "svg:page"
                 }
-              ]
+              ],
+              "active": true
             },
             {
               "type": "row",
@@ -917,7 +949,75 @@
       "transform": {
         "translate": {
           "x": -385.89605712890625,
-          "y": -323.1621071129872
+          "y": -324.3431373864247
+        },
+        "scale": 1
+      },
+      "timeline": {
+        "isEditorActive": false,
+        "position": 0,
+        "secondToPx": 200,
+        "scrollLeft": 0
+      }
+    },
+    "[ESP32-8048S043-GettingStarted.eez-project]:/userPages/1[flow-state]": {
+      "selection": {
+        "0": {
+          "0": {},
+          "1": {
+            "$selected": true
+          },
+          "3": {}
+        }
+      },
+      "transform": {
+        "translate": {
+          "x": -400.00421142578125,
+          "y": -241.1810302734375
+        },
+        "scale": 1
+      },
+      "timeline": {
+        "isEditorActive": false,
+        "position": 0,
+        "secondToPx": 200,
+        "scrollLeft": 0
+      }
+    },
+    "[ESP32-8048S043-GettingStarted.eez-project]:/userPages/2[flow-state]": {
+      "selection": {
+        "0": {
+          "2": {
+            "$selected": true
+          }
+        }
+      },
+      "transform": {
+        "translate": {
+          "x": -399.41375732421875,
+          "y": -273.6228900612865
+        },
+        "scale": 1
+      },
+      "timeline": {
+        "isEditorActive": false,
+        "position": 0,
+        "secondToPx": 200,
+        "scrollLeft": 0
+      }
+    },
+    "[ESP32-8048S043-GettingStarted.eez-project]:/userPages/3[flow-state]": {
+      "selection": {
+        "0": {
+          "6": {
+            "$selected": true
+          }
+        }
+      },
+      "transform": {
+        "translate": {
+          "x": -400,
+          "y": -242.36203002929688
         },
         "scale": 1
       },
@@ -940,10 +1040,11 @@
   "showComponentDescriptions": true,
   "logsPanelFilter": "all",
   "selectedStylePropertyName": "",
-  "lvglPart": "MAIN",
+  "lvglPart": "INDICATOR",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
-    "TEXT"
+    "TEXT",
+    "BACKGROUND"
   ],
   "showInactiveFlowsInDebugger": true
 }

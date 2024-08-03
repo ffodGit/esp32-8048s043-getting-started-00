@@ -361,7 +361,7 @@ void create_screen_screen02() {
             lv_obj_t *obj = lv_bar_create(parent_obj);
             objects.screen02_bar_vertical = obj;
             lv_obj_set_pos(obj, 736, 14);
-            lv_obj_set_size(obj, 40, 349);
+            lv_obj_set_size(obj, 40, 355);
             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
             lv_obj_set_style_bg_color(obj, lv_color_hex(0xfff3c621), LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_bg_color(obj, lv_color_hex(0xfff3ab21), LV_PART_INDICATOR | LV_STATE_DEFAULT);
@@ -370,9 +370,9 @@ void create_screen_screen02() {
             // Screen02LabelVertical
             lv_obj_t *obj = lv_label_create(parent_obj);
             objects.screen02_label_vertical = obj;
-            lv_obj_set_pos(obj, 668, 173);
+            lv_obj_set_pos(obj, 648, 172);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text(obj, "100");
+            lv_label_set_text(obj, "100%");
             lv_obj_set_style_text_font(obj, &lv_font_montserrat_30, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
     }

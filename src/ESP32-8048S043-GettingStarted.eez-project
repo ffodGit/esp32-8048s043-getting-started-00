@@ -1424,7 +1424,7 @@
               "left": 736,
               "top": 14,
               "width": 40,
-              "height": 349,
+              "height": 355,
               "customInputs": [],
               "customOutputs": [],
               "style": {
@@ -1476,9 +1476,9 @@
             {
               "objID": "8dab8814-4ef6-4f03-a7a5-c4d799fae6da",
               "type": "LVGLLabelWidget",
-              "left": 668,
-              "top": 173,
-              "width": 51,
+              "left": 648,
+              "top": 172,
+              "width": 76,
               "height": 33,
               "customInputs": [],
               "customOutputs": [],
@@ -1514,7 +1514,7 @@
                   }
                 }
               },
-              "text": "100",
+              "text": "100%",
               "textType": "literal",
               "longMode": "WRAP",
               "recolor": false
