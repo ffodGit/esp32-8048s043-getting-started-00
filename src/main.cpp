@@ -201,6 +201,7 @@ void loop()
     }
     else if (obj == objects.screen03_textarea_kb)
     {
+      setBuzzerFlag = true;
       Serial.printf("text area string: %s\n", lv_textarea_get_text(objects.screen03_textarea_kb));
     }
   }

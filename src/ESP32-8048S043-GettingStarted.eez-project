@@ -1616,13 +1616,14 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "align": "DEFAULT"
+                      "align": "DEFAULT",
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
               },
               "textarea": "Screen03TextareaKb",
-              "mode": "TEXT_LOWER"
+              "mode": "NUMBER"
             },
             {
               "objID": "b05cff8a-0aef-4cf7-94f4-71fceddc709b",
@@ -1677,7 +1678,7 @@
               "textType": "literal",
               "placeholder": "",
               "oneLineMode": false,
-              "passwordMode": false,
+              "passwordMode": true,
               "acceptedCharacters": "",
               "maxTextLength": 128
             }

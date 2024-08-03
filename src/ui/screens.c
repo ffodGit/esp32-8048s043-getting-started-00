@@ -412,8 +412,10 @@ void create_screen_screen03() {
             objects.screen03_keyboard = obj;
             lv_obj_set_pos(obj, 0, 130);
             lv_obj_set_size(obj, 800, 350);
+            lv_keyboard_set_mode(obj, LV_KEYBOARD_MODE_NUMBER);
             lv_obj_add_event_cb(obj, event_handler_cb_screen03_screen03_keyboard, LV_EVENT_ALL, 0);
             lv_obj_set_style_align(obj, LV_ALIGN_DEFAULT, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_text_font(obj, &lv_font_montserrat_30, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
         {
             // Screen03TextareaKb
@@ -423,7 +425,7 @@ void create_screen_screen03() {
             lv_obj_set_size(obj, 800, 130);
             lv_textarea_set_max_length(obj, 128);
             lv_textarea_set_one_line(obj, false);
-            lv_textarea_set_password_mode(obj, false);
+            lv_textarea_set_password_mode(obj, true);
             lv_obj_add_event_cb(obj, event_handler_cb_screen03_screen03_textarea_kb, LV_EVENT_ALL, 0);
             lv_obj_set_style_text_font(obj, &lv_font_montserrat_30, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
