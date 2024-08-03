@@ -12,6 +12,7 @@ typedef struct _objects_t {
     lv_obj_t *screen00;
     lv_obj_t *screen01;
     lv_obj_t *screen02;
+    lv_obj_t *screen03;
     lv_obj_t *main00_btn_next;
     lv_obj_t *screen00_btn_back;
     lv_obj_t *screen00_btn_led;
@@ -26,6 +27,8 @@ typedef struct _objects_t {
     lv_obj_t *screen02_btn_next;
     lv_obj_t *screen02_label_horizontal;
     lv_obj_t *screen02_label_vertical;
+    lv_obj_t *screen03_keyboard;
+    lv_obj_t *screen03_textarea_kb;
 } objects_t;
 
 extern objects_t objects;
@@ -35,6 +38,7 @@ enum ScreensEnum {
     SCREEN_ID_SCREEN00 = 2,
     SCREEN_ID_SCREEN01 = 3,
     SCREEN_ID_SCREEN02 = 4,
+    SCREEN_ID_SCREEN03 = 5,
 };
 
 void create_screen_main();
@@ -48,6 +52,9 @@ void tick_screen_screen01();
 
 void create_screen_screen02();
 void tick_screen_screen02();
+
+void create_screen_screen03();
+void tick_screen_screen03();
 
 void create_screens();
 void tick_screen(int screen_index);

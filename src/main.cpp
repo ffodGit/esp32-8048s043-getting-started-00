@@ -185,6 +185,24 @@ void loop()
       lv_scr_load(objects.screen01);
       setBuzzerFlag = true;
     }
+    else if (obj == objects.screen02_btn_next)
+    {
+      lv_scr_load(objects.screen03);
+      setBuzzerFlag = true;
+    }
+    else if (obj == objects.screen03_keyboard)
+    {
+      lv_event_code_t code = lv_event_get_code(&g_eez_event);
+      if (code == LV_EVENT_READY || code == LV_EVENT_CANCEL)
+      {
+          lv_scr_load(objects.screen02);
+          setBuzzerFlag = true;
+      }
+    }
+    else if (obj == objects.screen03_textarea_kb)
+    {
+      Serial.printf("text area string: %s\n", lv_textarea_get_text(objects.screen03_textarea_kb));
+    }
   }
 
   // ========== Buzzer beeper START ==========
