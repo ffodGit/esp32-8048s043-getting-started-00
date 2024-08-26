@@ -80,7 +80,7 @@ void setup()
 
   tft.begin();
   tft.setRotation(0);
-  tft.setBrightness(32);
+  tft.setBrightness(255);
 
   lv_init();
 
