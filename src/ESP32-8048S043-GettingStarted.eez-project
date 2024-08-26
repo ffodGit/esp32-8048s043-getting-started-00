@@ -173,7 +173,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_color": "#fff904",
+                      "text_color": "#e31616",
                       "text_font": "MONTSERRAT_30"
                     }
                   }
@@ -310,8 +310,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_font": "MONTSERRAT_30",
-                      "text_color": "#ffffff"
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
@@ -330,14 +329,7 @@
           "disabledStateType": "literal",
           "states": "",
           "localStyles": {
-            "objID": "8eb86917-c831-b762-5685-8d01972e8a22",
-            "definition": {
-              "MAIN": {
-                "DEFAULT": {
-                  "bg_color": "#000000"
-                }
-              }
-            }
+            "objID": "8eb86917-c831-b762-5685-8d01972e8a22"
           }
         }
       ],
@@ -591,8 +583,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_font": "MONTSERRAT_30",
-                      "text_color": "#ffffff"
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
@@ -702,14 +693,7 @@
           "disabledStateType": "literal",
           "states": "",
           "localStyles": {
-            "objID": "7e0c0f42-f9fd-4c2f-f1ef-269dc2519192",
-            "definition": {
-              "MAIN": {
-                "DEFAULT": {
-                  "bg_color": "#000000"
-                }
-              }
-            }
+            "objID": "7e0c0f42-f9fd-4c2f-f1ef-269dc2519192"
           }
         }
       ],
@@ -782,8 +766,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_font": "MONTSERRAT_30",
-                      "text_color": "#ffffff"
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
@@ -1062,8 +1045,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_font": "MONTSERRAT_30",
-                      "text_color": "#ffffff"
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
@@ -1082,14 +1064,7 @@
           "disabledStateType": "literal",
           "states": "",
           "localStyles": {
-            "objID": "14e86e0f-aa3f-48f0-cbb9-c81a859c4d48",
-            "definition": {
-              "MAIN": {
-                "DEFAULT": {
-                  "bg_color": "#000000"
-                }
-              }
-            }
+            "objID": "14e86e0f-aa3f-48f0-cbb9-c81a859c4d48"
           }
         }
       ],
@@ -1162,8 +1137,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_font": "MONTSERRAT_30",
-                      "text_color": "#ffffff"
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
@@ -1434,8 +1408,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_font": "MONTSERRAT_30",
-                      "text_color": "#ffffff"
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
@@ -1536,8 +1509,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_font": "MONTSERRAT_30",
-                      "text_color": "#ffffff"
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
@@ -1556,14 +1528,7 @@
           "disabledStateType": "literal",
           "states": "",
           "localStyles": {
-            "objID": "be67a435-348c-4e1b-a012-6cc5e59fa046",
-            "definition": {
-              "MAIN": {
-                "DEFAULT": {
-                  "bg_color": "#000000"
-                }
-              }
-            }
+            "objID": "be67a435-348c-4e1b-a012-6cc5e59fa046"
           }
         }
       ],
@@ -1652,8 +1617,7 @@
                   "MAIN": {
                     "DEFAULT": {
                       "align": "DEFAULT",
-                      "text_font": "MONTSERRAT_30",
-                      "bg_color": "#000000"
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
@@ -1705,9 +1669,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_font": "MONTSERRAT_30",
-                      "bg_color": "#000000",
-                      "text_color": "#ffffff"
+                      "text_font": "MONTSERRAT_30"
                     }
                   }
                 }
