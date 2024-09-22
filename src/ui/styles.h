@@ -7,6 +7,10 @@
 extern "C" {
 #endif
 
+extern void apply_style_dark_theme_claude00_button(lv_obj_t *obj);
+extern void apply_style_dark_theme_claude01_title(lv_obj_t *obj);
+extern void apply_style_dark_theme_claude02_bar(lv_obj_t *obj);
+extern void apply_style_dark_theme_claude03_panel(lv_obj_t *obj);
 
 
 #ifdef __cplusplus
